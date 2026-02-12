@@ -14,7 +14,6 @@ const openCamera = () => {
 <template>
   <p>Homepage</p>
   <button @click="openCamera">Open Camera</button>
-  {{ canInstall }}
    <button
     v-if="canInstall"
     @click="installApp"
