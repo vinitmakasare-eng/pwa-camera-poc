@@ -1,9 +1,18 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
+import AutoImport from 'unplugin-auto-import/vite'
+import { VueRouterAutoImports,  } from 'unplugin-vue-router'
+import VueRouter from 'unplugin-vue-router/vite'
 
 export default defineConfig({
   plugins: [
+    VueRouter(), 
+    AutoImport({
+      imports: [
+        VueRouterAutoImports, 
+      ]
+    }),
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
