@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VueRouterAutoImports,  } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -62,4 +63,9 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 })
