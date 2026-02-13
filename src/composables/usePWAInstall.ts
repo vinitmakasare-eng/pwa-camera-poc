@@ -6,7 +6,7 @@ export function usePWAInstall() {
 
   onMounted(() => {
     window.addEventListener('beforeinstallprompt', (e: any) => {
-      e.preventDefault()
+      // e.preventDefault()
       deferredPrompt.value = e
       canInstall.value = true
       console.log('PWA install available')
